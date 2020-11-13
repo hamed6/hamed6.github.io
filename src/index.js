@@ -219,9 +219,52 @@ const App3=()=>{
   )
 }
 //**************************************************************************************************************
+// Complex state: Object spread example 
+
+const App4=()=>{
+  const [click, setState]=useState({left:0, right:0, all:0});
+  
+
+  const clickLeft=()=>{
+    const newVal={
+      ...click,
+      left:click.left+1,
+    }
+    setState(newVal)
+  }
+
+  const clickRight=()=>{
+    const newVal={
+      ...click,
+      right:click.right+1
+    }
+    setState(newVal)
+  }
+
+  const clickAll=()=>{
+    const newVal={
+      ...click,
+      all:click.left+ click.right
+    }
+    setState(newVal)
+  }
+  return(
+    <div>
+      {click.left}
+      <button onClick={clickLeft}>left</button>
+      <button onClick={clickRight}>right</button>
+      {click.right}
+      <button onClick={clickAll}>ALL</button>
+      {click.all}
+    </div>
+  )
+}
+
+
+//**************************************************************************************************************
 ReactDOM.render(
 <React.StrictMode>
-    <App3/>
+    <App4/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -231,5 +274,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-
