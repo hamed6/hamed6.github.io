@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+//**************************************************************************************************************
 // 2 ways to define function
 // 1st fucntion declaration
 function dec(){
@@ -38,7 +38,7 @@ const FindName=(pp)=>{
   )
 }
 
-
+//**************************************************************************************************************
 
 const Myapp=()=>{
   // console.log("something")
@@ -57,7 +57,7 @@ const Myapp=()=>{
   // </div>
   )
 }
-
+//**************************************************************************************************************
 // map 
 const marr=[1,2,3]
 const nmarr=marr.map(val=>val*2)
@@ -66,13 +66,13 @@ const MapList=()=>{
   return (marr.map(value => <li>  {value}  </li>)
   )
 }
-
+//**************************************************************************************************************
 //concat array
 const farr=[1,2]
 const sarr=[3,4]
 const tarr=farr.concat(sarr)
 // console.log('concat is '+tarr)
-
+//**************************************************************************************************************
 // destructuring assignment 
 const destruct=[1,2,3,40,50]
 const [f,s, ...restof]=destruct
@@ -80,7 +80,7 @@ const [f,s, ...restof]=destruct
 // console.log(restof)
 
 
-
+//**************************************************************************************************************
 const Hello=(prop)=>{
   const {name , age}=prop
   return(
@@ -126,7 +126,7 @@ const Application=()=>{
 //   rr+=10
 // },1000)
 
-
+//**************************************************************************************************************
 const TestState=()=>{
   const [count, setCount]=useState(0);
   return(
@@ -142,14 +142,14 @@ const TestState=()=>{
   )
 }
 
-
+//**************************************************************************************************************
 const App1=()=>{
   const [c, s]=useState(1000)
   setTimeout(()=>s(c+1),1000)
   console.log(c);
 return <div>{c}</div>
 }
-
+//**************************************************************************************************************
 const Display = (props) => {
   return (
     <div>{props.counter}</div>
@@ -191,7 +191,7 @@ const App2 = () => {
   )
 }
 
-
+//**************************************************************************************************************
 
 const Disp=({val})=>{
   return <div>{val}</div>
@@ -218,7 +218,7 @@ const App3=()=>{
 
   )
 }
-
+//**************************************************************************************************************
 ReactDOM.render(
 <React.StrictMode>
     <App3/>
@@ -231,4 +231,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
 
