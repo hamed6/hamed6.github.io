@@ -223,12 +223,12 @@ const App3=()=>{
 
 const App4=()=>{
   const [click, setState]=useState({left:0, right:0, all:0});
-  
+
 
   const clickLeft=()=>{
     const newVal={
       ...click,
-      left:click.left+1,
+      left:click.left+1
     }
     setState(newVal)
   }
@@ -240,14 +240,15 @@ const App4=()=>{
     }
     setState(newVal)
   }
-
-  const clickAll=()=>{
+  // One way of saving all clicks Left&Right
+  /* const clickAll=()=>{
     const newVal={
       ...click,
       all:click.left+ click.right
     }
     setState(newVal)
-  }
+  } */
+  
   return(
     <div>
       {click.left}
