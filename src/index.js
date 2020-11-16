@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -241,13 +241,13 @@ const App4=()=>{
     setState(newVal)
   }
   // One way of saving all clicks Left&Right
-  /* const clickAll=()=>{
+  const clickAll=()=>{
     const newVal={
       ...click,
       all:click.left+ click.right
     }
     setState(newVal)
-  } */
+  }
   
   return(
     <div>
@@ -260,7 +260,14 @@ const App4=()=>{
     </div>
   )
 }
+//**************************************************************************************************************
+// debugging by cmd OR source tab in dev tool chrome 
+// * pause the execution 
+debugger;
 
+//**************************************************************************************************************
+// rules of hooks. To ensure that our application uses hooks-based state functions correctly:
+// useState useEffect must not be called from inside of a loop, a conditional expression, or any place that is not a function defining a component.
 
 //**************************************************************************************************************
 ReactDOM.render(
