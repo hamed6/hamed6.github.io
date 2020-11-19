@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/part1/static/css/main.e74facf6.chunk.css",
-    "main.js": "/part1/static/js/main.b6077b45.chunk.js",
-    "main.js.map": "/part1/static/js/main.b6077b45.chunk.js.map",
-    "runtime-main.js": "/part1/static/js/runtime-main.327b7f99.js",
-    "runtime-main.js.map": "/part1/static/js/runtime-main.327b7f99.js.map",
-    "static/js/2.23d6ff0c.chunk.js": "/part1/static/js/2.23d6ff0c.chunk.js",
-    "static/js/2.23d6ff0c.chunk.js.map": "/part1/static/js/2.23d6ff0c.chunk.js.map",
-    "index.html": "/part1/index.html",
-    "precache-manifest.8306c69ce28b6c16f1305d52c5605135.js": "/part1/precache-manifest.8306c69ce28b6c16f1305d52c5605135.js",
-    "service-worker.js": "/part1/service-worker.js",
-    "static/css/main.e74facf6.chunk.css.map": "/part1/static/css/main.e74facf6.chunk.css.map",
-    "static/js/2.23d6ff0c.chunk.js.LICENSE.txt": "/part1/static/js/2.23d6ff0c.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/part1/static/media/logo.ee7cd8ed.svg"
+    "main.css": "/hamed6.github.io/static/css/main.e74facf6.chunk.css",
+    "main.js": "/hamed6.github.io/static/js/main.baea06ef.chunk.js",
+    "main.js.map": "/hamed6.github.io/static/js/main.baea06ef.chunk.js.map",
+    "runtime-main.js": "/hamed6.github.io/static/js/runtime-main.f3cac3d9.js",
+    "runtime-main.js.map": "/hamed6.github.io/static/js/runtime-main.f3cac3d9.js.map",
+    "static/js/2.23d6ff0c.chunk.js": "/hamed6.github.io/static/js/2.23d6ff0c.chunk.js",
+    "static/js/2.23d6ff0c.chunk.js.map": "/hamed6.github.io/static/js/2.23d6ff0c.chunk.js.map",
+    "index.html": "/hamed6.github.io/index.html",
+    "precache-manifest.84a883113289e70727d0911bebdf393d.js": "/hamed6.github.io/precache-manifest.84a883113289e70727d0911bebdf393d.js",
+    "service-worker.js": "/hamed6.github.io/service-worker.js",
+    "static/css/main.e74facf6.chunk.css.map": "/hamed6.github.io/static/css/main.e74facf6.chunk.css.map",
+    "static/js/2.23d6ff0c.chunk.js.LICENSE.txt": "/hamed6.github.io/static/js/2.23d6ff0c.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/hamed6.github.io/static/media/logo.ee7cd8ed.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.327b7f99.js",
+    "static/js/runtime-main.f3cac3d9.js",
     "static/js/2.23d6ff0c.chunk.js",
     "static/css/main.e74facf6.chunk.css",
-    "static/js/main.b6077b45.chunk.js"
+    "static/js/main.baea06ef.chunk.js"
   ]
 }
