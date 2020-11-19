@@ -8,7 +8,7 @@ return <button onClick={props.onClick}>{props.text}</button>
 
 const StatisticMessage=(props)=>{
     
-    console.log(props);
+    // console.log(props);
     const {good, bad, neutral}=props
     
     console.log(props.good, bad, neutral);
