@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Feedback from './solution/feedback';
@@ -9,10 +9,31 @@ import Note from './solution/note'
 
 
 const  App=()=>{
+  // console.log(props);
+  const [newNote, setNewNotes]=useState('A new note...')
+  const handleNewNote=(event)=>{
+    console.log(event.target.value);
+    setNewNotes(event.target.value)
+  }
+
+  const addNote=(event)=>{
+    event.preventDefault() 
+    console.log('button clicked', event.target)
+    const noteObj={
+      content: newNote,
+      id:newNote.length+1,
+    }
+    setNewNotes()
+  }
+
   return (
     <div>
       <Feedback/>
-      <Note />
+      <Note/>
+      <form onSubmit={addNote}>
+    <input value={newNote} onChange={handleNewNote}/>
+      <button type="submit">Save</button>
+      </form>
     </div>
   )
 }
