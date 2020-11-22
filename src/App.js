@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Feedback from './solution/feedback';
+import Note from './solution/note'
 // import { Route, BrowserRouter as Router, Switch,Link } from 'react-router-dom';
 
 
@@ -11,6 +12,7 @@ const  App=()=>{
   return (
     <div>
       <Feedback/>
+      <Note />
     </div>
   )
 }
