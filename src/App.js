@@ -8,11 +8,13 @@ import Note from './solution/note'
 
 
 
-const  App=()=>{
-  // console.log(props);
+const  App=(props)=>{
+  
+  const [notes, setNotes]=useState(props.notes)
+  
   const [newNote, setNewNotes]=useState('A new note...')
   const handleNewNote=(event)=>{
-    console.log(event.target.value);
+  
     setNewNotes(event.target.value)
   }
 
@@ -29,9 +31,14 @@ const  App=()=>{
   return (
     <div>
       <Feedback/>
-      <Note/>
+      <ul>
+        {
+          notes.map((note)=><Note key={note.id}  props={note} />)
+        }
+      </ul>
+      {/* <Note props={notes} /> */}
       <form onSubmit={addNote}>
-    <input value={newNote} onChange={handleNewNote}/>
+      <input value={newNote} onChange={handleNewNote}/>
       <button type="submit">Save</button>
       </form>
     </div>
