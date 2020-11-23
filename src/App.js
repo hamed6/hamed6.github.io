@@ -10,7 +10,7 @@ import Note from './solution/note'
 
 const  App=(props)=>{
   
-  const [notes, setNotes]=useState(props.notes)
+  const [notes, setNotes]=useState(props)
   
   const [newNote, setNewNotes]=useState('A new note...')
   const handleNewNote=(event)=>{
