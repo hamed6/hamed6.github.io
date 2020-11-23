@@ -11,21 +11,22 @@ import Note from './solution/note'
 const  App=(props)=>{
   
   const [notes, setNotes]=useState(props.notes)
-  console.log(notes);
   const [newNote, setNewNotes]=useState('A new note...')
-  const handleNewNote=(event)=>{
   
+
+  const handleNewNote=(event)=>{
     setNewNotes(event.target.value)
   }
 
+  //controlled components
   const addNote=(event)=>{
     event.preventDefault() 
-    console.log('button clicked', event.target)
     const noteObj={
       content: newNote,
-      id:newNote.length+1,
+      id:notes.length+1 ,
     }
-    setNewNotes()
+    setNotes(notes.concat(noteObj))
+    setNewNotes('')
   }
 
   return (

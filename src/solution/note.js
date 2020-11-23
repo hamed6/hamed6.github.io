@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import ReactDom from 'react-dom';
 
-const Note=(props)=>{
+const Note=({props})=>{
     // console.log('================',props);
 //      const notes=[{
 //         id:1,
@@ -22,7 +22,7 @@ const Note=(props)=>{
     return  (
         <div >
              
-            <li  > {props.props.content} </li>
+            <li  > {props.content} </li>
             
              {/* <ul>
                 {
