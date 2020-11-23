@@ -11,7 +11,10 @@ import Note from './solution/note'
 const  App=(props)=>{
   
   const [notes, setNotes]=useState(props.notes)
-  const [newNote, setNewNotes]=useState('A new note...')
+  const [newNote, setNewNotes]=useState('To do list...')
+  const [showAll, setShow]=useState(true)
+
+  const noteToshow=showAll ? notes : notes.filter(note=> note.important)
   
 
   const handleNewNote=(event)=>{
@@ -23,6 +26,7 @@ const  App=(props)=>{
     event.preventDefault() 
     const noteObj={
       content: newNote,
+      important: Math.random()<0.5,
       id:notes.length+1 ,
     }
     setNotes(notes.concat(noteObj))
@@ -34,7 +38,7 @@ const  App=(props)=>{
       <Feedback/>
       <ul>
         {
-          notes.map((note)=><Note key={note.id}  props={note} />)
+          noteToshow.map((note)=><Note key={note.id}  props={note} />)
         }
       </ul>
       {/* <Note props={notes} /> */}
@@ -42,13 +46,18 @@ const  App=(props)=>{
       <input value={newNote} onChange={handleNewNote}/>
       <button type="submit">Save</button>
       </form>
+      <div>
+        <button onClick={()=> setShow(!showAll)}>
+          Show {showAll ? 'important': 'all'}
+        </button>
+      </div>
     </div>
   )
 }
 
 export default App;
 
-
+// =======================================================================
 // function App() {
 //   return (
 //     <div className="App">
