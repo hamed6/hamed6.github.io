@@ -28,7 +28,7 @@ const PhoneBook = () => {
       setNewPhone("");
     } else {
       setPersons(persons.concat(nameObj));
-      setPhone(phonenumber.concat(newPhoneNumber));
+      // setPhone(phonenumber.concat(newPhoneNumber));
       setNewName("");
       setNewPhone("");
     }
