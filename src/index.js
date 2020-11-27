@@ -3,6 +3,27 @@ import ReactDOM from 'react-dom';
 // import Feedback from './solution/feedback'
 import * as serviceWorker from './serviceWorker';
 import App from './App'
+import axios from 'axios'
+
+
+
+
+// const promise = axios.get('http://localhost:3001/notes')
+// promise.then(res=>
+//     console.log(res)
+// )
+
+
+axios
+    .get('http://localhost:3001/notes')
+    .then(res=>{
+    const notes=res.data
+    console.log(notes)
+})
+
+// const promise2= axios.get('http://localhost:3001/foobar')
+// console.log(promise2);
+
 
 const notes=[{
     id:1,
