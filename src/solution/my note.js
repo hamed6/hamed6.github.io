@@ -271,8 +271,17 @@ const App4=()=>{
 // useState useEffect must not be called from inside of a loop, a conditional expression, or any place that is not a function defining a component.
 
 //**************************************************************************************************************
+// What is promise ?
+// The documentation on Mozilla's site states the following about promises:
 
+// A Promise is an object representing the eventual completion or failure of an asynchronous operation.
 
+// In other words, a promise is an object that represents an asynchronous operation. A promise can have three distinct states:
+
+// The promise is pending: It means that the final value (one of the following two) is not available yet.
+// The promise is fulfilled: It means that the operation has completed and the final value is available, which generally is a successful operation. This state is sometimes also called resolved.
+// The promise is rejected: It means that an error prevented the final value from being determined, which generally represents a failed operation.
+//**************************************************************************************************************
 
 
 // ReactDOM.render(
