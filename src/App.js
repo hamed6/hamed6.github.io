@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Feedback from "./solution/feedback";
 import Note from "./solution/note";
 import PhoneBook from "./solution/phonebook";
+import axios from "axios";
 // import { Route, BrowserRouter as Router, Switch,Link } from 'react-router-dom';
 
 const App = (props) => {
+  const [serverNote, setServerNotes]=useState([])
+
   const [notes, setNotes] = useState(props.notes);
   const [newNote, setNewNotes] = useState("To do list...");
   const [showAll, setShow] = useState(true);
@@ -29,6 +32,15 @@ const App = (props) => {
     setNewNotes("");
   };
 
+
+  useEffect(()=>{
+    console.log('effect started....');
+    axios.get('http://localhost:3001/notes').then(res=>{
+      console.log('got result');
+      setServerNotes(res.data)
+    })
+  }, [])
+  console.log(`servernotes============== ${serverNote.length } `);
   return (
     <div>
       {/* ========Feeback======= */}
