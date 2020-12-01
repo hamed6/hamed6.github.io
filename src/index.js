@@ -14,12 +14,12 @@ import axios from 'axios'
 // )
 
 
-axios
-    .get('http://localhost:3001/notes')
-    .then(res=>{
-    const notes=res.data
-    console.log(notes)
-})
+// axios
+//     .get('http://localhost:3001/notes')
+//     .then(res=>{
+//     const notes=res.data
+//     console.log(notes)
+// })
 
 // const promise2= axios.get('http://localhost:3001/foobar')
 // console.log(promise2);

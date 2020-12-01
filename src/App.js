@@ -8,6 +8,7 @@ import axios from "axios";
 // import { Route, BrowserRouter as Router, Switch,Link } from 'react-router-dom';
 
 const App = (props) => {
+  
   const [serverNote, setServerNotes]=useState([])
 
   const [notes, setNotes] = useState(props.notes);
@@ -34,13 +35,13 @@ const App = (props) => {
 
 
   useEffect(()=>{
-    console.log('effect started....');
+    
     axios.get('http://localhost:3001/notes').then(res=>{
-      console.log('got result');
       setServerNotes(res.data)
     })
   }, [])
-  console.log(`servernotes============== ${serverNote.length } `);
+  
+  
   return (
     <div>
       {/* ========Feeback======= */}
