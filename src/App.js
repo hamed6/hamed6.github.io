@@ -5,6 +5,7 @@ import Feedback from "./solution/feedback";
 import Note from "./solution/note";
 import PhoneBook from "./solution/phonebook";
 import axios from "axios";
+import PhoneDB from './solution/phonebookDb'
 // import { Route, BrowserRouter as Router, Switch,Link } from 'react-router-dom';
 
 const App = (props) => {
@@ -37,6 +38,7 @@ const App = (props) => {
   useEffect(()=>{
     
     axios.get('http://localhost:3001/notes').then(res=>{
+      console.log('--------------', res.data);
       setServerNotes(res.data)
     })
   }, [])
@@ -69,6 +71,9 @@ const App = (props) => {
       {/* ========Phonebook======= */}
       <div>
         <PhoneBook />
+      </div>
+      <div>
+            <PhoneDB/>
       </div>
     </div>
   );
