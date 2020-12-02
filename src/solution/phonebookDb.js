@@ -19,7 +19,7 @@ const PhoneDB=()=>{
 
     return(<div> 
         <h1>Phonebook from JSON DB</h1>
-    {/* {persons.map(p=> <div key={p.name}> {p.name} {p.phonenumber}</div>)} */}
+    {persons.map(p=> <div key={p.name}> {p.name} {p.phonenumber}</div>)}
     </div>)
 
 }
