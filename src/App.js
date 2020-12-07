@@ -29,14 +29,18 @@ const App = (props) => {
       content: newNote,
       important: Math.random() < 0.5,
       id: notes.length + 1,
-    };
-    setNotes(notes.concat(noteObj));
-    setNewNotes("");
-  };
+    }
+
+    axios.post('http://localhost:3001/notes', noteObj)
+    .then(response=>{
+      // console.log(response);
+      setNotes(notes.concat(response.data));
+      setNewNotes("");
+    })
+  }
 
 
-  useEffect(()=>{
-    
+  useEffect(()=>{    
     axios.get('http://localhost:3001/notes').then(res=>{
       console.log('--------------', res.data);
       setServerNotes(res.data)
