@@ -24,13 +24,13 @@ const App = (props) => {
 
   //controlled components
   const addNote = (event) => {
+    console.log('------------------------------------------>',notes.length);
     event.preventDefault();
     const noteObj = {
       content: newNote,
       important: Math.random() < 0.5,
       id: notes.length + 1,
     }
-
     axios.post('http://localhost:3001/notes', noteObj)
     .then(response=>{
       // console.log(response);
@@ -38,6 +38,10 @@ const App = (props) => {
       setNewNotes("");
     })
   }
+
+  const toggleImportanceOf=(id)=>{
+    console.log(`importanc of ${id} need to be toggled`);
+  }  
 
 
   useEffect(()=>{    
@@ -58,7 +62,7 @@ const App = (props) => {
       <div>
         <ul>
           {noteToshow.map((note) => (
-            <Note key={note.id} props={note} />
+            <Note key={note.id} note={note}  toggleImportance={ ()=> toggleImportanceOf(note.id) } />
           ))}
         </ul>
         {/* <Note props={notes} /> */}

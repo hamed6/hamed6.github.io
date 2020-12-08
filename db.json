@@ -19,14 +19,19 @@
       "important": true
     },
     {
-      "content": "To do list..asdfasdf",
-      "important": false,
+      "content": "this is a new one",
+      "important": true,
       "id": 4
     },
     {
-      "content": "that is cool",
-      "important": true,
+      "content": "this a second new ",
+      "important": false,
       "id": 5
+    },
+    {
+      "content": "",
+      "important": true,
+      "id": 6
     }
   ],
   "persons": [
