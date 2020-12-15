@@ -40,7 +40,15 @@ const App = (props) => {
   }
 
   const toggleImportanceOf=(id)=>{
-    console.log(`importanc of ${id} need to be toggled`);
+    // console.log(`importanc of ${id} need to be toggled`);
+    const currentUrl=`http://localhost:3001/notes/${id}`
+    const currentNote= notes.find(note=>note.id=== id )
+    const changeNote={...currentNote, important: !currentNote.important }
+
+    axios.put(currentUrl, changeNote)
+    .then(res=>{
+      setNotes(notes.map(note=>note.id===id? res.data: note  ))
+    })
   }  
 
 

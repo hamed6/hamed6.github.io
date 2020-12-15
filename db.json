@@ -19,34 +19,9 @@
       "important": true
     },
     {
-      "content": "To do list...",
-      "important": true,
-      "id": 4
-    },
-    {
-      "content": "make it less",
-      "important": true,
-      "id": 5
-    },
-    {
-      "content": "asdfasdf",
-      "important": true,
-      "id": 6
-    },
-    {
-      "content": "a",
-      "important": true,
-      "id": 7
-    },
-    {
-      "content": "aa",
-      "important": true,
-      "id": 8
-    },
-    {
-      "content": "aaaa",
+      "content": "test db",
       "important": false,
-      "id": 9
+      "id": 4
     }
   ],
   "persons": [
