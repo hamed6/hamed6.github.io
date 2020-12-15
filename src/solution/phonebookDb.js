@@ -11,7 +11,7 @@ const PhoneDB=()=>{
 
     useEffect(()=>{
         axios.get('http://localhost:3001/persons').then(res=>{
-            console.log('==================',res.data);
+            // console.log('==================',res.data);
             setPersons(res.data)
         }).catch((e)=>{console.log('--------------------------->',e) })
     },[])

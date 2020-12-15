@@ -4,8 +4,9 @@ import "./App.css";
 import Feedback from "./solution/feedback";
 import Note from "./solution/note";
 import PhoneBook from "./solution/phonebook";
-import axios from "axios";
+// import axios from "axios";
 import PhoneDB from './solution/phonebookDb'
+import noteService from './services/notes'
 // import { Route, BrowserRouter as Router, Switch,Link } from 'react-router-dom';
 
 const App = (props) => {
@@ -24,40 +25,55 @@ const App = (props) => {
 
   //controlled components
   const addNote = (event) => {
-    console.log('------------------------------------------>',notes.length);
+    
     event.preventDefault();
     const noteObj = {
       content: newNote,
       important: Math.random() < 0.5,
       id: notes.length + 1,
     }
-    axios.post('http://localhost:3001/notes', noteObj)
+    noteService.create(noteObj)
     .then(response=>{
-      // console.log(response);
-      setNotes(notes.concat(response.data));
-      setNewNotes("");
+      setNotes(notes.concat(response))
+      setNewNotes("")
     })
+    // axios.post('http://localhost:3001/notes', noteObj)
+    // .then(response=>{
+    //   // console.log(response);
+    //   setNotes(notes.concat(response.data));
+    //   setNewNotes("");
+    // })
   }
 
   const toggleImportanceOf=(id)=>{
     // console.log(`importanc of ${id} need to be toggled`);
-    const currentUrl=`http://localhost:3001/notes/${id}`
+    // const currentUrl=`http://localhost:3001/notes/${id}`
     const currentNote= notes.find(note=>note.id=== id )
     const changeNote={...currentNote, important: !currentNote.important }
-
-    axios.put(currentUrl, changeNote)
-    .then(res=>{
-      setNotes(notes.map(note=>note.id===id? res.data: note  ))
+    noteService.update(id,changeNote )
+    .then(response=>{
+      setNotes(notes.map(note=> note.id === id ? response: note))
     })
+
+    // axios.put(currentUrl, changeNote)
+    // .then(res=>{
+    //   setNotes(notes.map(note=>note.id===id? res.data: note  ))
+    // })
   }  
 
 
-  useEffect(()=>{    
-    axios.get('http://localhost:3001/notes').then(res=>{
-      console.log('--------------', res.data);
-      setServerNotes(res.data)
+  useEffect(()=>{
+    noteService.getAll().then(response=> {
+      setServerNotes(response)
     })
-  }, [])
+  }
+  ,[])    
+
+  //   axios.get('http://localhost:3001/notes').then(res=>{
+  //     console.log('--------------', res.data);
+  //     setServerNotes(res.data)
+  //   })
+  // }, [])
   
   
   return (

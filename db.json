@@ -19,8 +19,8 @@
       "important": true
     },
     {
-      "content": "test db",
-      "important": true,
+      "content": "test",
+      "important": false,
       "id": 4
     }
   ],
