@@ -44,7 +44,7 @@ const PhoneBook = () => {
 
   const findName = (event) => {
     setNewlist(event.target.value);
-
+    
     const result = persons.filter((person) =>
       person.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
