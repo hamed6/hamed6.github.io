@@ -1,3 +1,6 @@
+// "start": "react-scripts start",
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import Feedback from './solution/feedback'
