@@ -1,6 +1,7 @@
 //commonJS modules
-const http =require ('http');
-
+const http =require ('http')
+const express = require('express')
+const app = express()
 
 let notes = [
     {
@@ -22,15 +23,27 @@ let notes = [
       important: true
     }
   ]
+// ===============================================================================
+// TO CREATE HTTP MODULE APP
 
+// const app= http.createServer((req, res)=>{
+    // res.writeHead(200,{'Content-Type':'text/plain'})
+//     res.writeHead(200,{'Content-Type':'application/json'})
+//     res.end(JSON.stringify(notes))
+// })
 
-const app= http.createServer((req, res)=>{
-    res.writeHead(200,{'Content-Type':'text/plain'})
-    res.writeHead(200,{'Content-Type':'application/json'})
-    res.end(JSON.stringify(notes))
+// ===============================================================================
+
+// TO CREATE EXPRESS SERVER APP
+
+app.get('/', (req, res)=>{
+  res.send('<h1>static server message</h1>')
+})
+
+app.get('/api/notes',(req, res)=>{
+  res.json(notes)
 })
 
 const port =3001
-
 app.listen(port)
 // console.log(`server running on ${port}`);
