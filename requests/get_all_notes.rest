@@ -1,12 +1,10 @@
-GET http://localhost:3001/api/notes
-
-###
-
-POST http://localhost:3001/api/notes HTTP/1.1
-content-Type: application/json
+POST http://localhost:3001/api/notes
+Content-Type: application/json
 
 {
-    "title":"let try",
-    "content":"this post is hardcoded"
+    "content":"this is hardcoded",
+    "important":false
 }
 
+###
+GET http://localhost:3001/api/notes HTTP/1.1

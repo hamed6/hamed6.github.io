@@ -61,11 +61,18 @@ app.delete('/api/notes/:id',(req, res)=>{
 
   res.send(204).end()
 })
-
+/// ***
+/// middleware 
+app.use(express.json())
+/// ***
 
 app.post('/api/notes/',(req,res)=>{
+  const createId= notes.length>0? Math.max(...notes.map(note=>note.id)):0
+
   const note=req.body
-  console.log(req.headers)
+  console.log(createId);
+  note.id=createId+1
+  notes.concat(note)
   res.json(note)
 })
 
