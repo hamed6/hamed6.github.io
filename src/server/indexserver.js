@@ -1,6 +1,7 @@
 //commonJS modules
 const http =require ('http')
 const express = require('express')
+const { networkInterfaces } = require('os')
 const app = express()
 
 let notes = [
@@ -66,14 +67,26 @@ app.delete('/api/notes/:id',(req, res)=>{
 app.use(express.json())
 /// ***
 
-app.post('/api/notes/',(req,res)=>{
+const createMaxId=()=>{
   const createId= notes.length>0? Math.max(...notes.map(note=>note.id)):0
+  return createId +1
+}
 
-  const note=req.body
-  console.log(createId);
-  note.id=createId+1
-  notes.concat(note)
-  res.json(note)
+app.post('/api/notes/',(req,res)=>{
+  const body =req.body
+  if(!body){
+    return res.status(404).json({"error":"content is empty"})
+  }
+const note={
+  id:createMaxId(),
+  content: body.content,
+  date: new Date(),
+  important: body.important || false
+}
+  
+notes=notes.concat(note)
+res.json(note)
+
 })
 
 const port =3001
