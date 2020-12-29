@@ -63,7 +63,8 @@ app.delete('/api/notes/:id',(req, res)=>{
   res.send(204).end()
 })
 /// ***
-/// middleware 
+/// middleware  /// The json-parser we used earlier takes the raw data from the requests that's stored in the request object,
+//  parses it into a JavaScript object and assigns it to the request object as a new property body.
 app.use(express.json())
 /// ***
 
