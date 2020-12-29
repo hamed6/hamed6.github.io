@@ -15,7 +15,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "node src/server/indexserver.js",
+    "startserver": "node src/server/indexserver.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
