@@ -3,6 +3,8 @@ const http =require ('http')
 const express = require('express')
 const { networkInterfaces } = require('os')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 
 let notes = [
     {
