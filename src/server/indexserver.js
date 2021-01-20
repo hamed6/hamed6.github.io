@@ -77,7 +77,7 @@ const createMaxId=()=>{
 
 app.post('/api/notes/',(req,res)=>{
   const body =req.body
-  if(!body){
+  if(!body.content===undefined){
     return res.status(404).json({"error":"content is empty"})
   }
 const note={
