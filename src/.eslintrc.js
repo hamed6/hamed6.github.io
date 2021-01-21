@@ -4,23 +4,14 @@ module.exports = {
         'commonjs': true,
         'es2021': true
     },
-    'extends': [
-        'eslint:recommended',
-        'plugin:react/recommended'
-    ],
+    'extends': 'eslint:recommended',
     'parserOptions': {
-        'ecmaFeatures': {
-            'jsx': true
-        },
         'ecmaVersion': 12
     },
-    'plugins': [
-        'react'
-    ],
     'rules': {
         'indent': [
             'error',
-            2
+            4
         ],
         'linebreak-style': [
             'error',
