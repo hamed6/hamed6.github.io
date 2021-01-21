@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "react": "^16.14.0",
@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "server": "json-server -p3001 --watch db.json"
+    "server": "json-server -p3001 --watch db.json",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
